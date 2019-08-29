@@ -151,21 +151,22 @@ if (!$result1){
                 <div class="list w3-row">
                     <div class="" id="Lego"><h2>Lego</h2>
                     <?php
-     require_once './functions.php';
-     $query = "SELECT iId, iName, iDescription, iPrice, iStatus, iSize, iImage,cName FROM Item,Catalogue WHERE Item.catalogueId=Catalogue.cId AND cName LIKE '%Lego%'  ORDER BY cName";
+     include './dbconnector.php';
+     $query = "SELECT iid, iname, idescription, iprice, istatus, iimage,cName FROM Item,Catalogue WHERE Item.cid=Catalogue.cid AND cname LIKE '%Lego%'  ORDER BY cName";
      $result = queryMysql($query);
      $error = $msg = "";
      if (!$result){
       $error = "Couldn't load data, please try again.";
      }
-     while ($row = mysqli_fetch_array($result)) {
-        $iId = $row[0];
-        $iName = $row[1];
-        $iDescription = $row[2];
-        $iPrice = $row[3];
-        $iStatus = $row[4];
-        $iSize = $row[5];
-        $iImage = $row[6];
+     while ($row = pg_fetch_assoc($result)) 
+     {
+        $iid = $row[iid];
+        $iname = $row[iname];
+        $idescription = $row[idescription];
+        $iprice = $row[iprice];
+        $istatus = $row[istatus];
+        $iimage = $row[iimage];
+        ?>
         
         echo "<div class='sp w3-quarter w3-card w3-center ' ><div class='w3-orange w3-padding-large'>$iStatus</div><div ><img onclick=\"document.getElementById('$iName').style.display='block'\" id='testimg' src='./images/item/". $iImage . "' width='100%'></div><div class='name'><h3>$iName</h3></div><h3>$iPrice$</h3></div>"
                 . "<!--SHOW MORE INFORMATION-->
