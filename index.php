@@ -170,7 +170,7 @@ if (!$result1){
 
   }
         ?>  
-              <a> <img src="<?= $iimage; ?>"  width="220px" height="200px" />
+              <a> 
           <h3><?= $iname; ?></h3> </a>      
         
      
