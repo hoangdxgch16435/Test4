@@ -152,8 +152,8 @@ if (!$result1){
                     <div class="" id="Lego"><h2>Lego</h2>
                     <?php
      include './dbconnector.php';
-     $query = "SELECT iid, iname, idescription, iprice, istatus, iimage,cName FROM Item,Catalogue WHERE Item.cid=Catalogue.cid AND cname LIKE '%Lego%'  ORDER BY cName";
-     $result = pg_query($query);
+     $query2 = "SELECT iid, iname, idescription, iprice, istatus, iimage,cname FROM item,catalogue WHERE item.cid=catalogue.cid AND cname LIKE '%Lego%'  ORDER BY cname";
+     $result = pg_query($query2);
      $error = $msg = "";
      if (!$result){
       $error = "Couldn't load data, please try again.";
