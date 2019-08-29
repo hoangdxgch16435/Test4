@@ -160,12 +160,12 @@ if (!$result1){
      }
      while ($row = pg_fetch_assoc($result)) 
      {
-        $iid = $row[iid];
-        $iname = $row[iname];
-        $idescription = $row[idescription];
-        $iprice = $row[iprice];
-        $istatus = $row[istatus];
-        $iimage = $row[iimage];
+        $iid = $row['iid'];
+        $iname = $row['iname'];
+        $idescription = $row['idescription'];
+        $iprice = $row['iprice'];
+        $istatus = $row['istatus'];
+        $iimage = $row['iimage'];
         ?>
         
         echo "<div class='sp w3-quarter w3-card w3-center ' ><div class='w3-orange w3-padding-large'>$iStatus</div><div ><img onclick=\"document.getElementById('$iName').style.display='block'\" id='testimg' src='./images/item/". $iImage . "' width='100%'></div><div class='name'><h3>$iName</h3></div><h3>$iPrice$</h3></div>"
