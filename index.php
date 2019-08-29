@@ -103,14 +103,14 @@ include './dbconnector.php';
 //load items
 $query = "SELECT * FROM Item ";
 $result = pg_query($query);
-$error = $msg = "";
+$error = $msg = "good";
 if (!$result){
     $error = "Couldn't load data, please try again.";
 }
 //load catalogue
 $query1 = "SELECT * from Catalogue";
 $result1 = pg_query($query1);
-$error1 = $msg1 = "";
+$error1 = $msg1 = "good1";
 if (!$result1){
     $error1 = "Couldn't load data, please try again.";
 }
