@@ -107,6 +107,14 @@ $error = $msg = "good";
 if (!$result){
     $error = "Couldn't load data, please try again.";
 }
+     while ($row = pg_fetch_assoc($result2)) 
+     {
+        $iid = $row['iid'];
+        $iname = $row['iname'];
+        $idescription = $row['idescription'];
+        $iprice = $row['iprice'];
+        $istatus = $row['istatus'];
+        $iimage = $row['iimage'];}
 //load catalogue
 $query1 = "SELECT * from Catalogue";
 $result1 = pg_query($query1);
@@ -150,23 +158,7 @@ if (!$result1){
                 </div>
                 <div class="list w3-row">
                     <div class="" id="Lego"><h2>Lego</h2>
-                    <?php
-     include './dbconnector.php';
-     $query2 = "SELECT iid, iname, idescription, iprice, istatus, iimage,cname FROM item,catalogue WHERE item.cid=catalogue.cid AND cname LIKE '%Lego%'  ORDER BY cname";
-     $result2 = pg_query($query2);
-     $error2 = $msg2 = "";
-     if (!$result2){
-      $error2 = "Couldn't load data, please try again.";
-     }
-     while ($row = pg_fetch_assoc($result2)) 
-     {
-        $iid = $row['iid'];
-        $iname = $row['iname'];
-        $idescription = $row['idescription'];
-        $iprice = $row['iprice'];
-        $istatus = $row['istatus'];
-        $iimage = $row['iimage'];
-        ?>        
+
         
      
                 </div>        
